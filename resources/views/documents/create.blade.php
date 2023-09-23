@@ -38,6 +38,8 @@
         </div>
     </div>
 
+    
+
     <div class="col-xs-6 col-sm-6 col-md-6">
         <div class="form-group">
             <strong>Publication_date:</strong>
@@ -62,5 +64,7 @@
     </div>
 </div>
 {!! Form::close() !!}
-<p class="text-center text-primary"><small>TB_Policy</small></p>
+<p class="text-center text-primary">
+    
+<small>TB_Policy</small></p>
 @endsection

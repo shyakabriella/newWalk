@@ -18,9 +18,15 @@ use App\Http\Controllers\HomeSectionThreeController;
 use App\Http\Controllers\HomeSectionFourController;
 use App\Http\Controllers\HomeSectionFiveController;
 use App\Http\Controllers\HomeSectionSixController;
+use App\Http\Controllers\ChatBotController;
 
   
 Route::get('/', [PageController::class, 'index'])->name('/');
+Route::get('/help', [PageController::class, 'help'])->name('help');
+Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/policy', [PageController::class, 'policy'])->name('policy');
+Route::get('/guideline', [PageController::class, 'guideline'])->name('guideline');
   
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -51,6 +57,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('home_section_sixes', HomeSectionSixController::class);
 
 });
+
+Route::post('send',[ChatBotController::class,'sendChat']);
 
 
 // Route::middleware(['auth'])->group(function () {
