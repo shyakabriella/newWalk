@@ -1,9 +1,6 @@
 <!-- page wrapper start -->
-
 <div class="page-wrapper">
-
 <!-- preloader start -->
-
 <div id="ht-preloader">
   <div class="clear-loader d-flex align-items-center justify-content-center">
     <div class="loader">
@@ -51,24 +48,24 @@
                 </li>
                 <li><a href="#"><i class="lab la-twitter"></i></a>
                 </li>
-                <li><a href="#"><i class="lab la-linkedin-in"></i></a>
+                <li><a href="#"><i class="lab la-linkedin-in">
+                </i>
+              </a>
                 </li>
               </ul>
             </div>
-
-           
-
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <div id="header-wrap">
     <div class="container-fluid px-lg-8">
       <div class="row">
         <div class="col">
           <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand logo" href="index.html">
+            <a class="navbar-brand logo" href="/">
               <img id="logo-img" class="img-fluid" style="width:220px; height:500px;" src="images/tb1.png" alt>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span></span>
@@ -78,27 +75,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto me-auto position-relative">
                 <!-- Home -->
-                <li> <a class="nav-link " href="#">Home</a></li>
+                <li> <a class="nav-link " href="/">Home</a></li>
                 <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
                   <ul class="dropdown-menu">
-                    <li><a href="pathologycam-testing.html">Online_TB Consultation</a>
+                    <li><a href="{{ route('help') }}">Online_TB Consultation</a>
                     </li>
-                    <li><a href="biochemistry-solution.html">About_Us</a>
+                    <li><a href="{{ route('about') }}">About_Us</a>
                     </li>
-  
                   </ul>
                 </li>
                 <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                      Document_Category
                     </a>
                   <ul class="dropdown-menu">
-                    <li><a href="research-style-1.html">TB_Policy</a>
+                    <li><a href="{{ route('policy') }}">TB_Policy</a>
                     </li>
-                    <li><a href="research-single.html">TB_Guidelines</a>
+                    <li><a href="{{ route('guideline') }}">TB_Guidelines</a>
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item "> <a class="nav-link" href="#" >Contact_Us</a>
+                <li class="nav-item "> <a class="nav-link" href="{{ route('contact') }}" >Contact_Us</a>
                   <ul class="dropdown-menu">
                    
                   </ul>
@@ -122,7 +118,12 @@
   <div class="container ">
     <form class="d-flex justify-content-between search-inner">
       <input type="text" class="form-control" id="search-input" placeholder="Search Here">
-      <button type="submit" class="btn"></button> <span class="las la-times" id="close-search" title="Close Search"></span>
+      <button type="submit" class="btn">
+
+      </button> 
+      <span class="las la-times" id="close-search" title="Close Search">
+
+      </span>
     </form>
   </div>
 </div>

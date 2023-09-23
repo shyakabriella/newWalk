@@ -10,6 +10,7 @@ use App\Models\HomeSectionFour;
 use App\Models\HomeSectionFive;
 use App\Models\HomeSectionSix;
 use App\Models\HealthCenter;
+use App\Models\Document;
 use DB;
 
 class PageController extends Controller
@@ -33,9 +34,40 @@ class PageController extends Controller
             'section_five' => $section_five,
             'section_six' => $section_six,
             'health' =>$health
-        ]);
-      
-        
-            
+        ]);       
+    }
+
+    public function help(Request $request)
+    {   
+        return view('pages.help', [            
+        ]);            
+    }
+
+    public function about(Request $request)
+    {   
+        return view('pages.about', [            
+        ]);            
+    }
+
+    public function contact(Request $request)
+    {   
+        return view('pages.contact', [            
+        ]);            
+    }
+
+    public function policy(Request $request)
+    {   
+        return view('pages.policy', [            
+        ]);            
+    }
+
+    public function guideline(Request $request)
+
+    {    
+        $documents = Document::latest()->paginate(5);
+        //$documents = Document::where('category', '=', 'policy');
+        return view('pages.guideline', [  
+            'documents' =>$documents  
+        ]);            
     }
 }

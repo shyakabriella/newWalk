@@ -484,6 +484,8 @@
               </ul>
             </div>
           </div>
+
+          
           <div class="col-sm-6 mt-5 mt-sm-0">
             <div class="team-member">
               <div class="team-images">

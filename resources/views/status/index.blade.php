@@ -50,46 +50,11 @@
 </table>
 
 <hr>
-<h3>TB_Category</h3>
-{!! Form::open(array('route' => 'status.store','method'=>'POST')) !!}
-<div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Adjust_Status</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div class="d-flex mb-2">
-                                {!! Form::text('name', null, array('placeholder' => 'sample_status','class' => 'form-control')) !!}
-                                <button type="submit" class="btn btn-primary ms-2">Add</button>
-                            </div>
-                        </div>
-                    </div>
-<table class="table table-bordered">
- <tr>
-   <th>No</th>
-   <th>Status</th>
-   <th width="280px">Action</th>
- </tr>
- <hr>
- @foreach ($category as $key => $cat)
-  <tr>
-    <td>{{ ++$i }}</td>
-    <td>{{ $cat->tb_category}}</td>
-  
-   
-  </tr>
- @endforeach
-</table>
-
-
-
 
 
 {!! $data->render() !!}
 <hr>
-
 <p class="text-center text-primary"><small>TB_Policy & guideline</small></p>
-
 @endsection
 
 

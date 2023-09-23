@@ -41,14 +41,14 @@
 <form action="#" method="POST">
 
     <a class="btn btn-info" href="#">Show</a>
-    @can('product-edit')
+    @can('documents-edit')
     <a class="btn btn-primary" href="#">Edit</a>
     @endcan
     @csrf
     @method('DELETE')
-    @can('product-delete')
+   
     <button type="submit" class="btn btn-danger">Delete</button>
-    @endcan
+  
 
 </form>
 </td>   
@@ -57,7 +57,8 @@
 </table>
 {!! $documents->render() !!}
 
-<p class="text-center text-primary"><small>TB_Policy & guideline</small></p>
+<p class="text-center text-primary">
+  <small>TB_Policy & guideline</small></p>
 
 @endsection
 
