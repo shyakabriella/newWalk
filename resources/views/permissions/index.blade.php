@@ -6,9 +6,9 @@
             <h2>Permissions Management</h2>
         </div>
         <div class="pull-right">
-        @can('role-create')
+    
             <a class="btn btn-success" href="{{ route('permissions.create') }}"> Set Permission</a>
-            @endcan
+            
         </div>
     </div>
 </div>
@@ -32,9 +32,9 @@
 
         <form action="{{ route('permissions.destroy',$permission->id) }}" method="POST">
             <a class="btn btn-info" href="#">Show</a>
-            @can('permisson-edit')
+            
             <a class="btn btn-primary" href="#">Edit</a>
-            @endcan
+           
             @csrf
             @method('DELETE')
             
