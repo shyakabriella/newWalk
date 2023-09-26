@@ -64,11 +64,11 @@
               <div class="footer-cntct my-4">
                 <ul class="media-icon list-unstyled">
                   <li> <i class="flaticon-hospital"></i>
-                    <p class="mb-0">423B, Road Wordwide Country, USA</p>
+                    <p class="mb-0">423B, Road Wordwide Country, RWANDA</p>
                   </li>
-                  <li><i class="flaticon-medical-report"></i>  <a href="mailto:themeht23@gmail.com">themeht23@gmail.com</a>
+                  <li><i class="flaticon-medical-report"></i>  <a href="mailto:themeht23@gmail.com">info@tbpolicy.com</a>
                   </li>
-                  <li><i class="flaticon-medical-assistance"></i>  <a href="tel:+912345678900">+91-234-567-8900</a>
+                  <li><i class="flaticon-medical-assistance"></i>  <a href="tel:+912345678900">+250 787517625</a>
                   </li>
                   <li><i class="flaticon-working-hours"></i> 
                     <p class="mb-0">Mon-Sat:9.30am To 7.00pm</p>
@@ -79,7 +79,7 @@
           </div>
           <div class="row">
             <div class="col">
-              <div class="copyright p-4 white-bg mt-5 ms-md-n6">Copyright © 2021 All rights reserved | Labortech Made by <i class="lar la-heart text-theme heartBeat2"></i>  <u><a href="www.themeht.com">ThemeHt</a></u>
+              <div class="copyright p-4 white-bg mt-5 ms-md-n6">Copyright © 2021 All rights reserved | Labortech Made by <i class="lar la-heart text-theme heartBeat2"></i>  <u><a href="www.themeht.com">Tracy</a></u>
               </div>
             </div>
           </div>

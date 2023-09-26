@@ -106,7 +106,7 @@
               </div>
 
               <div class="ms-sm-3 me-md-5">
-              </div> <a class="btn btn-theme btn-sm d-none d-md-inline-block" href="#"><span>Appointment</span></a>
+              </div> <a class="btn btn-theme btn-sm d-none d-md-inline-block" href="{{ route('contact') }}"><span>Appointment</span></a>
             </div>
           </nav>
         </div>
