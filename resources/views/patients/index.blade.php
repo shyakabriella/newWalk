@@ -35,8 +35,6 @@
     <td>{{ $patient->phone }}</td>
     <td>{{ $patient->Nid }}</td>
     <td>{{ $patient->health_center_name }}</td>
-   
-    
     <td>
 
 <form action="#" method="POST">

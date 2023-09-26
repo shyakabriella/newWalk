@@ -27,6 +27,11 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/policy', [PageController::class, 'policy'])->name('policy');
 Route::get('/guideline', [PageController::class, 'guideline'])->name('guideline');
+Route::get('/report', [PageController::class, 'report'])->name('report');
+Route::get('/sample', [PageController::class, 'sample'])->name('sample');
+Route::get('/document', [PageController::class, 'document'])->name('document');
+Route::get('/patient', [PageController::class, 'patient'])->name('patient');
+Route::get('/user', [PageController::class, 'user'])->name('user');
   
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -57,6 +62,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('home_section_sixes', HomeSectionSixController::class);
 
 });
+
+Route::post('users/view-pdf', [PageController::class, 'viewPDF'])->name('view-pdf');
+Route::post('users/download-pdf', [PageController::class, 'downloadPDF'])->name('download-pdf');
+
+
+Route::get('/pages.report', [PageController::class, 'createPDF']);
 
 Route::post('send',[ChatBotController::class,'sendChat']);
 

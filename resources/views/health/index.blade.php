@@ -17,6 +17,8 @@
   <p>{{ $message }}</p>
 </div>
 @endif
+
+
 <table class="table table-bordered">
  <tr>
    <th>No</th>
@@ -54,9 +56,7 @@
 
 </form>
 
-</td>
-    
-   
+</td>  
   </tr>
  @endforeach
 </table>

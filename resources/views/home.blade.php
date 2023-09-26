@@ -81,69 +81,50 @@
              <!-- Recent Sales Start -->
              <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
+            
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
+                        <h6 class="mb-0">List of  Patient</h6>
                         <a href="">Show All</a>
                     </div>
                     <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <table id="tableToPrint" class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Patient Name</th>
+                                    <th scope="col">Telephone</th>
+                                    <th scope="col">National ID</th>
+                                    <th scope="col">Health_center_name</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach ($patients as $key => $patient)
                                 <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    
+                                    <td>{{ $patient->name }}</td>
+                                    <td>{{ $patient->phone }}</td>
+                                    <td>{{ $patient->Nid }}</td>
+                                    <td>{{ $patient->health_center_name }}</td>
+                                    <td>
+
+                                    <form action="#" method="POST">
+
+                                    <a class="btn btn-info" href="#">Show</a>
+                                    @can('product-edit')
+                                    <a class="btn btn-primary" href="#">Edit</a>
+                                    @endcan
+                                    @csrf
+                                    @method('DELETE')
+                                    @can('product-delete')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    @endcan
+
+                                </form>
+                                </td>  
                                 </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
+                                @endforeach
+                                </table>
+                               
                             </tbody>
                         </table>
                     </div>
@@ -273,5 +254,6 @@
             </div>
             <!-- Widgets End -->
 </div>
+
 
 @endsection

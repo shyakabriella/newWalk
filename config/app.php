@@ -126,6 +126,9 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+
+    
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
@@ -153,6 +156,20 @@ return [
         
         'Html' => Spatie\Html\Facades\Html::class,
     ],
+
+    'providers' => [
+        Barryvdh\DomPDF\ServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
+        Yajra\DataTables\ButtonsServiceProvider::class,
+      ],
+      'aliases' => [
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+      ],
+
+      
 
     /*
     |--------------------------------------------------------------------------
