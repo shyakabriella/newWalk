@@ -14,14 +14,14 @@ class HomeSectionFiveController extends Controller
      * 
      * Display a listing of the resource.
      */
-    // function __construct()
-    // {
-    //      $this->middleware('permission:section_five-index|section_five-create|section_five-edit|section_five-delete', ['only' => ['index','show']]);
-    //      $this->middleware('permission:section_five-create', ['only' => ['create','store']]);
-    //      $this->middleware('permission:section_five-edit', ['only' => ['edit','update']]);
-    //      $this->middleware('permission:section_five-delete', ['only' => ['destroy']]);
+    function __construct()
+    {
+         $this->middleware('permission:section_five-index|section_five-create|section_five-edit|section_five-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:section_five-create', ['only' => ['create','store']]);
+         $this->middleware('permission:section_five-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:section_five-delete', ['only' => ['destroy']]);
 
-    // }
+    }
 
     
     public function index()

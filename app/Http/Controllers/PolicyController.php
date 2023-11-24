@@ -8,6 +8,37 @@ use DB;
 
 class PolicyController extends Controller
 {
+    /**
+
+     * Display a listing of the resource.
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+     function __construct()
+     {
+          $this->middleware('permission:policy-list|policy-create|policy-edit|policy-delete', ['only' => ['index','show']]);
+          $this->middleware('permission:policy-create', ['only' => ['create','store']]);
+          $this->middleware('permission:policy-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:policy-delete', ['only' => ['destroy']]);
+ 
+     }
+ 
+     /**
+ 
+      * Display a listing of the resource.
+ 
+      *
+ 
+      * @return \Illuminate\Http\Response
+ 
+      */
+
+
+
     public function index()
     {
         $policy = Policy::latest()->paginate(5);
