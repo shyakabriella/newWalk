@@ -46,11 +46,11 @@ input[type=submit]:hover {
 <h3>Contact Form</h3>
 
 <div class="container">
-  <form action="/action_page.php">
+  <form action="/selfpage.php" method="POST">
 
-    <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
-    <input type="text" id="lname" name="lastname" placeholder="Your email.."><br>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea> <br>
+    <input type="text" id="fname" name="name" placeholder="Your name.."><br>
+    <input type="text" id="lname" name="email" placeholder="Your email.."><br>
+    <textarea id="subject" name="content" placeholder="Write something.." style="height:200px"></textarea> <br>
 
     <input type="submit" value="Submit">
   </form>

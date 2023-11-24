@@ -163,7 +163,7 @@ h2 a {
 
 <form action="#" method="POST">
 
-<a class="btn btn-theme" href="about-us.html"> <span>More About</span></a>            
+<a class="btn btn-theme" href="https://www.who.int/publications/digital/global-tuberculosis-report-2021/featured-topics/tb-guidelines"> <span>More About</span></a>            
     @can('product-edit')
     <a class="btn btn-primary" href="#">Edit</a>
     @endcan

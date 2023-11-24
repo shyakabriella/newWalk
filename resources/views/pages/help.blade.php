@@ -96,7 +96,7 @@
         <div class="mr-2" style="width:45px;height:45px;">
         <img width="100%" height="100%" style="border-radius:50px;" src="img/bot.png" alt="">
         </div>
-        <div class="text-white px-4 py-3" style="width:270px;background:#13254b;border-radius:10px;font-size:85%;">
+        <div class="text-white px-4 py-3" style="width:870px;background:#13254b;border-radius:10px;font-size:85%;">
         `+data+` <hr> <div style="color:red;">TB_Policy & Guideline HelpDesk Made by Tracy</div>
     </div>
     </div>`)

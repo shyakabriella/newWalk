@@ -133,7 +133,7 @@
             <!-- Recent Sales End -->
 
              <!-- Widgets Start -->
-             <div class="container-fluid pt-4 px-4">
+             <!-- <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="h-100 bg-secondary rounded p-4">
@@ -251,7 +251,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Widgets End -->
 </div>
 

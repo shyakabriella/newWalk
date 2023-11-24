@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Models\Document;
 use Illuminate\Http\Request;
+use DB;
 
 
 class DocumentController extends Controller
@@ -157,12 +158,13 @@ class DocumentController extends Controller
 
      */
 
-    public function destroy(Document $document)
-    {
-        $document->delete();
-        return redirect()->route('documents.index')
-                        ->with('success','Product deleted successfully');
+     public function destroy($id)
 
-    }
+     {
+         DB::table("documents")->where('id',$id)->delete();
+         return redirect()->route('documents.index')
+                         ->with('success','Role deleted successfully');
+ 
+     }
 
 }

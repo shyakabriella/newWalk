@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
@@ -7,7 +8,7 @@
         </div>
         <div class="pull-right">
 
-            <a class="btn btn-success" href="{{ route('documents.create') }}"> Record_Documents</a>
+            <a class="btn btn-success" href="{{ route('polic.create') }}"> Record_Policy</a>
         </div>
     </div>
 </div>
@@ -28,39 +29,36 @@
    <th width="280px">Action</th>
  </tr>
  <hr>
- @foreach ($documents as $key => $document)
+ @foreach ($policy as $key => $policy)
   <tr>
     <td>{{ ++$i }}</td>
-    <td>{{ $document->title }}</td>
-    <td>{{ $document->description }}</td>
-    <td>{{ $document->category }}</td>
-    <td>{{ $document->publication_date }}</td>
-    <td>{{ $document->source_organization }}</td>
+    <td>{{ $policy->title }}</td>
+    <td>{{ $policy->description }}</td>
+    <td>{{ $policy->category }}</td>
+    <td>{{ $policy->publication_date }}</td>
+    <td>{{ $policy->source_organization }}</td>
     <td>
 
-  <form action="{{ route('documents.destroy',$document->id) }}" method="POST">
+<form action="{{ route('polic.destroy',$policy->id) }}" method="POST">
 
-<a class="btn btn-info" href="{{ route('documents.show',$document->id) }}">Show</a>
-@can('policy-edit')
-<a class="btn btn-primary" href="{{ route('documents.edit',$document->id) }}">Edit</a>
-@endcan
-
-@csrf
-@method('DELETE')
-
-<button type="submit" class="btn btn-danger">Delete</button>
-
+    <a class="btn btn-info" href="{{ route('polic.show',$policy->id) }}">Show</a>
+    @can('policy-edit')
+    <a class="btn btn-primary" href="{{ route('polic.edit',$policy->id) }}">Edit</a>
+    @endcan
+    
+    @csrf
+    @method('DELETE')
+   
+    <button type="submit" class="btn btn-danger">Delete</button>
+  
 </form>
 </td>   
   </tr>
  @endforeach
 </table>
-{!! $documents->render() !!}
+
 
 <p class="text-center text-primary">
   <small>TB_Policy & guideline</small></p>
 
 @endsection
-
-
-

@@ -11,6 +11,7 @@ use App\Models\HomeSectionFive;
 use App\Models\HomeSectionSix;
 use App\Models\HealthCenter;
 use App\Models\Document;
+use App\Models\Policy;
 use App\Models\Patient;
 use App\Models\Sample;
 use App\Models\SampleStatus;
@@ -62,7 +63,9 @@ class PageController extends Controller
 
     public function policy(Request $request)
     {   
-        return view('pages.policy', [            
+        $policy = Policy::latest()->paginate(5);
+        return view('pages.policy', [  
+            'policy' =>$policy  
         ]);            
     }
 
@@ -124,6 +127,11 @@ class PageController extends Controller
         ]);            
     }
 
+
+    
+
+    
+
     public function patient(Request $request)
     {   
         $patients = Patient::all();
@@ -151,4 +159,6 @@ class PageController extends Controller
             'documents' =>$documents  
         ]);            
     }
+
+   
 }

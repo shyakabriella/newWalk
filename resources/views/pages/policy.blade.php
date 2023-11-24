@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<h1>tuberculosis Policy From Different Actors</h1>
+<h1>tuberculosis Guideline From Different Actors</h1>
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -13,17 +13,7 @@
   
   
   
-  
-      <style>
-      /*	
-	Side Navigation Menu V2, RWD
-	===================
-	License:
-	https://goo.gl/EaUPrt
-	===================
-	Author: @PableraShow
-
- */
+<style>
 
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
@@ -153,58 +143,48 @@ h2 a {
 
 <body translate="no" >
 
-  <h1><span class="blue">&lt;</span>Table<span class="blue">&gt;</span> <span class="yellow">Responsive</pan></h1>
-
-
 <table class="container">
 	<thead>
-		<tr>
-			<th><h1>Name</h1></th>
-			<th><h1>Blood Group</h1></th>
-			<th><h1>Last Donate</h1></th>
-			<th><h1>Phone</h1></th>
-		</tr>
+    <tr>
+   <th>title</th>
+   <th>description</th>
+   <th width="280px">Action</th>
+ </tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>Google</td>
-			<td>9518</td>
-			<td>6369</td>
-			<td>01:32:50</td>
-		</tr>
-		<tr>
-			<td>Twitter</td>
-			<td>7326</td>
-			<td>10437</td>
-			<td>00:51:22</td>
-		</tr>
-		<tr>
-			<td>Amazon</td>
-			<td>4162</td>
-			<td>5327</td>
-			<td>00:24:34</td>
-		</tr>
-    <tr>
-			<td>LinkedIn</td>
-			<td>365;'4</td>
-			<td>2961</td>
-			<td>00:12:10</td>
-		</tr>
-    <tr>
-			<td>CodePen</td>
-			<td>2002</td>
-			<td>4135</td>
-			<td>00:46:19</td>
-		</tr>
-    <tr>
-			<td>GitHub</td>
-			<td>4623</td>
-			<td>3486</td>
-			<td>00:31:52</td>
-		</tr>
+    @foreach ($policy as $key => $policy)
+  <tr>
+    
+    <td>{{ $policy->title }}</td>
+    <td>{{ $policy->description }}</td>
+
+
+    <td>
+
+<form action="#" method="POST">
+
+<a class="btn btn-theme" href="https://www.who.int/publications/i/item/9789241598323"> <span>More About</span></a>            
+    @can('product-edit')
+    <a class="btn btn-primary" href="#">Edit</a>
+    @endcan
+    @csrf
+    @method('DELETE')
+    @can('product-delete')
+    <button type="submit" class="btn btn-danger">Delete</button>
+    @endcan
+
+</form>
+</td>   
+  </tr>
+ @endforeach
+</table>
+
+
+<p class="text-center text-primary"><small>TB_Policy & guideline</small></p>
+   
+   
 	</tbody>
 </table>
-  
 </body>
 </html>
 
