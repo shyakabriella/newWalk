@@ -40,7 +40,6 @@
     <td>
 
 <form action="{{ route('polic.destroy',$policy->id) }}" method="POST">
-
     <a class="btn btn-info" href="{{ route('polic.show',$policy->id) }}">Show</a>
     @can('policy-edit')
     <a class="btn btn-primary" href="{{ route('polic.edit',$policy->id) }}">Edit</a>

@@ -5,8 +5,6 @@ use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
-  
-
 class CreateAdminUserSeeder extends Seeder
 
 {
@@ -25,7 +23,7 @@ class CreateAdminUserSeeder extends Seeder
 
     {
         $user = User::create([
-            'name' => 'Hardik Savani', 
+            'name' => 'Super Admin', 
             'email' => 'admin@gmail.com',
             'password' => bcrypt('123456')
 

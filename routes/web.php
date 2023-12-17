@@ -6,34 +6,26 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\HealthCenterController;
-use App\Http\Controllers\PatientController;
-use App\Http\Controllers\SampleController;
-use App\Http\Controllers\SampleStatusController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MessageController;
-
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\HomeSectionOneController;
-use App\Http\Controllers\HomeSectionTwoController;
-use App\Http\Controllers\HomeSectionThreeController;
-use App\Http\Controllers\HomeSectionFourController;
-use App\Http\Controllers\HomeSectionFiveController;
-use App\Http\Controllers\HomeSectionSixController;
+
 use App\Http\Controllers\ChatBotController;
+
+
+use App\Http\Controllers\UbudeheController;
+use App\Http\Controllers\EducationController;
+use App\Http\Controllers\AssetController;
+use App\Http\Controllers\DeseaseController;
+use App\Http\Controllers\DisabilityController;
+use App\Http\Controllers\EldersApplicationController;
 
   
 Route::get('/', [PageController::class, 'index'])->name('/');
-Route::get('/help', [PageController::class, 'help'])->name('help');
-Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/how', [PageController::class, 'how'])->name('how');
+Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::get('/policy', [PageController::class, 'policy'])->name('policy');
-Route::get('/guideline', [PageController::class, 'guideline'])->name('guideline');
-Route::get('/report', [PageController::class, 'report'])->name('report');
-Route::get('/sample', [PageController::class, 'sample'])->name('sample');
-Route::get('/document', [PageController::class, 'document'])->name('document');
-Route::get('/patient', [PageController::class, 'patient'])->name('patient');
-Route::get('/user', [PageController::class, 'user'])->name('user');
+Route::get('/req', [PageController::class, 'req'])->name('req');
   
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -42,62 +34,22 @@ Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'store']
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-    Route::resource('documents', DocumentController::class);
-    Route::resource('polic', PolicyController::class);
     Route::resource('permissions', PermissionController::class);
-    Route::resource('health', HealthCenterController::class);
-    Route::resource('patients', PatientController::class);
-    Route::resource('samples', SampleController::class);
-    Route::resource('status', SampleStatusController::class);
-    Route::resource('message', MessageController::class);
-    Route::get('/category',[SampleStatusController::class,"category"]);
     Route::get('/users/{user_id}/approve', [UserController::class,'approve'])->name('users.approve');
     Route::get('/users',[UserController::class,"index"])->name('users.index');
     Route::get('/approval',[HomeController::class,"approval"])->name('approval');
-    //Route::get('/home',[HomeController::class,"index"])->name('home');
-    //Page controller
-    Route::resource('home_section_ones', HomeSectionOneController::class);
-    Route::resource('home_section_twos', HomeSectionTwoController::class);
-    Route::resource('home_section_threes', HomeSectionThreeController::class);
-    Route::resource('home_section_fours', HomeSectionFourController::class);
-    Route::resource('home_section_fives', HomeSectionFiveController::class);
-    Route::resource('home_section_sixes', HomeSectionSixController::class);
-
+    Route::resource('disability', DisabilityController::class);
+    Route::resource('application', EldersApplicationController::class);
+    Route::resource('ubudehe', UbudeheController::class);
+    Route::resource('education', EducationController::class);
+    Route::resource('desease', DeseaseController::class);
+    Route::resource('assety', AssetController::class);
+   
 });
 
 Route::post('users/view-pdf', [PageController::class, 'viewPDF'])->name('view-pdf');
 Route::post('users/download-pdf', [PageController::class, 'downloadPDF'])->name('download-pdf');
-
-
 Route::get('/pages.report', [PageController::class, 'createPDF']);
-
 Route::post('send',[ChatBotController::class,'sendChat']);
 
 
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('/approval',[HomeController::class,"approval"])->name('approval');
-//     Route::get('/home',[HomeController::class,"index"])->name('home');
-
-// });
-
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('/approval',[HomeController::class,"approval"])->name('approval');
-
-//     Route::middleware(['approved'])->group(function () {
-//         Route::get('/home',[HomeController::class,"index"])->name('home');
-//     });
-// });
-
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('/approval',[HomeController::class,"approval"])->name('approval');
-
-//     Route::middleware(['approved'])->group(function () {
-//         Route::get('/home',[HomeController::class,"index"])->name('home');
-//     });
-
-//     Route::middleware(['admin'])->group(function () {
-//         Route::get('/users',[UserController::class,"index"])->name('users.index');
-
-//         Route::get('/users/{user_id}/approve', [UserController::class,'approve'])->name('users.approve');
-//     });
-// });

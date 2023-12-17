@@ -1,129 +1,54 @@
-<!-- page wrapper start -->
-<div class="page-wrapper">
-<!-- preloader start -->
-<div id="ht-preloader">
-  <div class="clear-loader d-flex align-items-center justify-content-center">
-    <div class="loader">
-     <span class="plus"></span>
-    <span class="plus"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    </div>
-  </div>
-</div>
-
-<header id="site-header" class="header">
-  <div class="header-top light-bg">
-    <div class="container-fluid px-lg-8">
-      <div class="row">
-        <div class="col d-flex align-items-center justify-content-between">
-          <div class="topbar-link d-flex align-items-center text-black">
-            <div class="d-none d-sm-flex align-items-center me-3">
-              <div> <i class="las la-phone"></i>
-              </div>
-              <div>Emergency Line: <a class="text-black" href="tel:+912345678900"> +250 787 517 625</a>
-              </div>
-            </div>
-            <div class="d-none d-md-flex align-items-center me-3">
-              <div> <i class="las la-map-marker"></i>
-              </div>
-              <div>
-                <div>Location: Rwanda</div>
-              </div>
-            </div>
-            <div class="d-none d-lg-flex align-items-center">
-              <div> <i class="las la-business-time"></i>
-              </div>
-              <div>
-                <div>Mon-Sat: 9.30am To 7.00pm</div>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center"> <a class="btn btn-white btn-sm py-3" href="/login"><span>Login</span></a>
-            <div class="social-icons d-none d-lg-inline-block ms-3">
-              <ul class="list-inline">
-                <li><a href="#"><i class="lab la-facebook-f"></i></a>
-                </li>
-                <li><a href="#"><i class="lab la-twitter"></i></a>
-                </li>
-                <li><a href="#"><i class="lab la-linkedin-in">
-                </i>
-              </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="header-wrap">
-    <div class="container-fluid px-lg-8">
-      <div class="row">
-        <div class="col">
-          <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand logo" href="/">
-              <img id="logo-img" class="img-fluid" style="width:220px; height:500px;" src="images/tb1.png" alt>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto me-auto position-relative">
-                <!-- Home -->
-                <li> <a class="nav-link " href="/">Home</a></li>
-                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="{{ route('help') }}">Online_TB Consultation</a>
-                    </li>
-                    <li><a href="{{ route('about') }}">About_Us</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                     Document_Category
+<nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="{{ route('/') }}">
+                        <i class="bi-back"></i>
+                        <span>E|C|F</span>
                     </a>
-                  <ul class="dropdown-menu">
-                    <li><a href="{{ route('policy') }}">TB_Policy</a>
-                    </li>
-                    <li><a href="{{ route('guideline') }}">TB_Guidelines</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item "> <a class="nav-link" href="{{ route('contact') }}" >Contact_Us</a>
-                  <ul class="dropdown-menu">
-                   
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class="right-nav align-items-center d-flex justify-content-end">
-              <div class="search-icon d-sm-inline-block d-none"> <a id="search" href="javascript:void(0)"><i class="las la-search"></i></a>
-              </div>
 
-              <div class="ms-sm-3 me-md-5">
-              </div> <a class="btn btn-theme btn-sm d-none d-md-inline-block" href="{{ route('contact') }}"><span>Appointment</span></a>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-<div class="search-input" id="search-input-box">
-  <div class="container ">
-    <form class="d-flex justify-content-between search-inner">
-      <input type="text" class="form-control" id="search-input" placeholder="Search Here">
-      <button type="submit" class="btn">
+                    <div class="d-lg-none ms-auto me-4">
+                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                    </div>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="{{ route('/') }}">Home</a>
+                            </li>
 
-      </button> 
-      <span class="las la-times" id="close-search" title="Close Search">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_2">About_Us</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="{{ route('how') }}">OurServices</a>
+                            </li>
 
-      </span>
-    </form>
-  </div>
-</div>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link click-scroll" href="{{ route('faq') }}">FAQs</a>
+                            </li> -->
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="{{ route('contact') }}">Contact</a>
+                            </li>
+
+                            <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+
+                                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="topics-listing.html">Topics Listing</a></li>
+
+                                    <li><a class="dropdown-item" href="contact.html">Contact Form</a></li>
+                                </ul>
+                            </li> -->
+                        </ul>
+
+                        <div class="d-none d-lg-block">
+                            <a href="/login" class="navbar-icon bi-person smoothscroll"></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>

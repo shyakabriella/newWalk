@@ -32,7 +32,7 @@
                     <a href="{{ route('roles.index') }}" class="nav-item nav-link"><i class="fa fa-pen me-2"></i>Manage Role</a>
                     <a href="{{ route('polic.index') }}" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Policy</a>
                     <a href="{{ route('documents.index') }}" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Guidelines</a>
-                    <a href="#" class="nav-item nav-link"><i class="fa fa-book me-2"></i>SetPermissions</a>
+                    <a href="{{ route('permissions.index')}}" class="nav-item nav-link"><i class="fa fa-book me-2"></i>SetPermissions</a>
                    
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-flag-fill"></i>Reports</a>

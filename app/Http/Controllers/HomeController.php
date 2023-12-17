@@ -29,9 +29,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $patients = Patient::all();
-        return view('home')
-        ->with('patients',$patients);
+      
+        return view('home');
+      
     } 
   
     /**
