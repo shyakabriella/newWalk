@@ -7,7 +7,7 @@
             </div>
             <div class="pull-right">
           
-                <a class="btn btn-success" href="{{ route('disability.create') }}"> Create Disability</a>
+                <a class="btn btn-success" href="{{ route('desease.create') }}"> Create Disability</a>
               
             </div>
         </div>

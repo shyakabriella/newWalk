@@ -13,14 +13,14 @@ class DeseaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //  function __construct()
-    //  {
-    //       $this->middleware('permission:product-list|product-create|product-edit|product-delete', ['only' => ['index','show']]);
-    //       $this->middleware('permission:product-create', ['only' => ['create','store']]);
-    //       $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
-    //       $this->middleware('permission:product-delete', ['only' => ['destroy']]);
+     function __construct()
+     {
+          $this->middleware('permission:desease-list|desease-create|desease-edit|desease-delete', ['only' => ['index','show']]);
+          $this->middleware('permission:desease-create', ['only' => ['create','store']]);
+          $this->middleware('permission:desease-edit', ['only' => ['edit','update']]);
+          $this->middleware('permission:desease-delete', ['only' => ['destroy']]);
  
-    //  }
+     }
  
      /**
       * Display a listing of the resource.
@@ -37,7 +37,6 @@ class DeseaseController extends Controller
           //dd($asset);
           return view('desease.index',compact('desease'))
               ->with('i', (request()->input('page', 1) - 1) * 5);
-  
       }
   
       
@@ -60,32 +59,24 @@ class DeseaseController extends Controller
       /**
   
        * Store a newly created resource in storage.
-  
        *
-  
        * @param  \Illuminate\Http\Request  $request
-  
+
        * @return \Illuminate\Http\Response
   
        */
   
       public function store(Request $request)
-  
       {
           request()->validate([
               'name' => 'required',
               'details' => 'required',
-             
-  
           ]);
           Desease::create($request->all());
           return redirect()->route('desease.index')
                           ->with('success','Desease created successfully.');
   
       }
- 
- 
-     
       /**
        * Display the specified resource.
        *

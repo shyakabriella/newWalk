@@ -4,13 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ubudehe;
-
+use App\Models\Education;
+use App\Models\Asset;
+use App\Models\Desease;
+use App\Models\Disability;
 class PageController extends Controller
 {
     public function index()
-    {      
+    {   
+        $ubudehe = Ubudehe::get();  
+        $education = Education::get(); 
+        $asset = Asset::get(); 
+        $desease = Desease::get(); 
+        $disability = Disability::get(); 
+       //dd($ubudehe);
         return view('pages.index', [                
-        ]);    
+        ])
+        ->with("ubudehe",$ubudehe)  
+        ->with("education",$education) 
+        ->with("desease",$desease) 
+        ->with("disability",$disability) 
+        ->with("asset",$asset);  
     }
 
     public function how()

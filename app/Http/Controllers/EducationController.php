@@ -18,16 +18,16 @@ class EducationController extends Controller
 
      */
 
-    //  function __construct()
+     function __construct()
 
-    //  {
+     {
  
-    //       $this->middleware('permission:product-list|product-create|product-edit|product-delete', ['only' => ['index','show']]);
-    //       $this->middleware('permission:product-create', ['only' => ['create','store']]);
-    //       $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
-    //       $this->middleware('permission:product-delete', ['only' => ['destroy']]);
+          $this->middleware('permission:education-list|education-create|education-edit|education-delete', ['only' => ['index','show']]);
+          $this->middleware('permission:education-create', ['only' => ['create','store']]);
+          $this->middleware('permission:education-edit', ['only' => ['edit','update']]);
+          $this->middleware('permission:education-delete', ['only' => ['destroy']]);
  
-    //  }
+     }
  
      /**
       * Display a listing of the resource.

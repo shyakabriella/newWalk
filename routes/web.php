@@ -19,6 +19,7 @@ use App\Http\Controllers\AssetController;
 use App\Http\Controllers\DeseaseController;
 use App\Http\Controllers\DisabilityController;
 use App\Http\Controllers\EldersApplicationController;
+use App\Http\Controllers\ApplicationController;
 
   
 Route::get('/', [PageController::class, 'index'])->name('/');
@@ -44,6 +45,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('education', EducationController::class);
     Route::resource('desease', DeseaseController::class);
     Route::resource('assety', AssetController::class);
+    Route::resource('apply', ApplicationController::class);
    
 });
 
