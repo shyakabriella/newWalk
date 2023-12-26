@@ -1,293 +1,255 @@
 @extends('layouts.app')
 
 @section('content')
- 
 <style>
-   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
+   @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 * {
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-
 body {
-    background: #f6f5f7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
-    height: 50vh;
-    margin: 150px 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://www.yudiz.com/codepen/animation-form/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 700px;
+  font-family: "Montserrat", sans-serif;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #edf3f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  transition: all 0.3s ease;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  transition: all 0.3s ease;
+}
+.box-animation::before {
+  animation: animateInputBorder 4s linear infinite;
+  animation-delay: -2s;
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #00ccff
+  );
+}
+.box-animation::after {
+  animation: animateInputBorder 4s linear infinite;
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #d400d4
+  );
+}
+@keyframes animateInputBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.box span {
+  position: absolute;
+  inset: 3px;
+  background-color: #edf3f9;
+  border-radius: 10px;
+  z-index: 2;
+}
+.box span input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-size: 20px;
+  padding: 16px;
+  position: relative;
+}
+.box span input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.form-container {
+  padding: 70px 0px;
+  background-color: #d0deec;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 50%;
+  transition: 0.3s;
+  min-height: 540px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
-h1 {
-    margin: 0px;
+.left-right .login-form {
+  transform: translateX(-100%);
 }
-
-h2 {
-    text-align: center;
+.form-wraper .input-group:not(:last-child) {
+  margin-bottom: 30px;
 }
-
-p {
-    font-size: 14px;
-    font-weight: 100;
-    line-height: 20px;
-    letter-spacing: 0.5px;
-    margin: 20px 0 30px;
+.signUp-form {
+  transform: translateX(100%);
 }
-
-span {
-    font-size: 12px;
+.left-right .signUp-form {
+  transform: translateX(0%);
 }
-
-a {
-    color: blue;
-    font-size: 12px;
-    text-decoration: none;
-    margin: 15px 0;
-    cursor: pointer;
+.form-wraper {
+  padding: 0px 40px;
+  position: absolute;
+  width: 100%;
+  transition: 0.3s;
 }
-
-button {
-    border-radius: 20px;
-    border: 1px solid #FF4B2B;
-    background-color: #FF4B2B;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
+.action-button button {
+  border-radius: 10px;
+  font-family: "Avenir Next";
+  font-size: 20px;
+  padding: 0.5rem 3rem;
+  color: black;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(101deg, #00ccff, #d400d4);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: none;
+  color: #edf3f9;
+  width: 100%;
+  padding: 10px;
+  margin-top: 30px;
+  transition: all 0.3s ease;
 }
-
-    button:active {
-        transform: scale(0.95);
-    }
-
-    button:focus {
-        outline: none;
-    }
-
-    button.ghost {
-        background-color: transparent;
-        border-color: #FFFFFF;
-    }
-
-form {
-    background-color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
-    text-align: center;
+.action-button button:hover {
+  color: rgb(20, 20, 20);
+  box-shadow: 2px 1000px 1px #edf3f9 inset;
 }
-
-input {
-    background-color: #eee;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
+.form-title {
+  margin-bottom: 30px;
 }
-
-.containe {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    position: relative;
-    overflow: hidden;
-    width: 800px;
-    max-width: 100%;
-    min-height: 480px;
+.main-form-container {
+  min-width: 800px;
+  background-color: rgba(0, 0, 0, 0.152);
+  border-radius: 10px;
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
 }
-
-.form-containe {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
+.bg-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
-
-.sign-in-containe {
-    left: 0;
-    width: 50%;
-    z-index: 2;
+.left-right {
+  transform: translateX(100%);
 }
-
-.containe.right-panel-active .sign-in-containe {
-    transform: translateX(100%);
+.section {
+  min-height: 800px;
 }
-
-.sign-up-containe {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.containe.right-panel-active .sign-up-containe {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: show 0.6s;
-}
-
-@keyframes show {
-    0%, 49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-
-    50%, 100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
-.overlay-containe {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    z-index: 100;
-}
-
-.containe.right-panel-active .overlay-containe {
-    transform: translateX(-100%);
-}
-
-.overlay {
-    
-    color: #FFFFFF;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
-
-.containe.right-panel-active .overlay {
-    transform: translateX(50%);
-}
-
-.overlay-panel {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
-
-.overlay-left {
-    transform: translateX(-20%);
-}
-
-.containe.right-panel-active .overlay-left {
-    transform: translateX(0);
-}
-
-.overlay-right {
-    right: 0;
-    transform: translateX(0);
-}
-
-.containe.right-panel-active .overlay-right {
-    transform: translateX(20%);
-} 
 </style>
 
 
-<div class="containe" id="containe">
-        <div class="form-containe sign-up-containe">
-        <form method="POST" action="{{ route('register') }}">
-        @csrf
-                <h1 style="padding-top: 15px"> Create Account</h1>
-                <input type="text" name="name" placeholder="Name" class="form-control @error('name') is-invalid @enderror">
-                @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-
-                <input type="email" name="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror">
+<section>
+<form method="POST" action="{{ route('login') }}">
+@csrf
+  <div class="main-form-container">
+    <div id="form_section" class="form-container">
+      <div class="login-form form-wraper ">
+        <div>
+          <div class="form-title">
+            <h2>Login</h2>
+          </div>
+          <div class="input-group">
+            <div class="box">
+              <span>
+                <input placeholder="Email" class="myInput @error('email') is-invalid @enderror " name="email" value="{{ old('email') }}" required autocomplete="email" autofocus type="text" />
                 @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
-
-                <input type="password" name="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror">
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                <input type="password" name="password_confirmation" placeholder="password_confirmation"  class="form-control" name="password_confirmation">
- 
-                <button style="margin-top:10px"> Create Account</button>
-                <h5>Already have an account! <a class="ghost" id="signIn" style="color:blue;"><u>Sign In</u></a></h5>
-            </form>
-        </div>
-        <div class="form-containe sign-in-containe">
-        <form method="POST" action="{{ route('login') }}">
-        @csrf
-                <h1 style="padding-bottom: 15px"> Login Now</h1>
-                <input type="email" name="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror">
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                <input type="password" name="password" placeholder="Password"  class="form-control @error('password') is-invalid @enderror">
-                @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                <a href="#" style="padding-left:150px; font-weight: bold"> Forgot Your Password?</a>
-                <button style="margin-top: 10px"> Let Me In...</button>
-                <h5>New to here! <a class="ghost" id="signUp" style="color:blue;"><u>Sign Up</u></a></h5>
-            </form>
-            
-        </div>
-        <div class="overlay-containe">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <img src="conv.jpeg" alt="movie-1" height="450" width="500"/>
-                    
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <img src="arn.jpg" alt="movie-2" height="480" width="500"/>
-                </div>
+              </span>
             </div>
+          </div>
+          <div class="input-group">
+            <div class="box">
+              <span>
+                <input placeholder="Password" class="myInput @error('email') is-invalid @enderror" name="password" required autocomplete="current-password" type="password"/>
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+              </span>
+            </div>
+          </div>
+          <div class="forget-password">
+            <a href="">FORGOT PASSWORD</a>
+          </div>
+          <div class="action-button">
+            <button type="submit">Login</button>
+          </div>
         </div>
-    </div>
+      </div>
+      <!--dign up-->      
+</section>
 
-    <script>
-        const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const containe = document.getElementById('containe');
+<script>
+    const inputs = document.querySelectorAll("input");
+inputs.forEach(function (input) {
+  input.addEventListener("focus", function () {
+    const parentElement = input.parentElement.parentElement;
+    parentElement.classList.add("box-animation");
+  });
+  input.addEventListener("blur", function () {
+    const parentElement = input.parentElement.parentElement;
+    parentElement.classList.remove("box-animation");
+  });
+});
 
-    signUpButton.addEventListener('click', () => {
-        containe.classList.add("right-panel-active");
-    });
-    signInButton.addEventListener('click', () => {
-        containe.classList.remove("right-panel-active");
-    });
-    </script>
+const buttons = document.querySelectorAll("#multiple-btn button");
+const form_container = document.getElementById('form_section')
+buttons.forEach((button) => {
+button.addEventListener("click", () => {
+form_container.classList.toggle("left-right");
+
+});
+});
+</script>
 
 @endsection

@@ -5,13 +5,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
   <script src="{{asset('pip/js/functions.js')}}"></script>
     <script src="{{asset('ads/Address.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+    <script src="/path/to/your/local/fontawesome.js"></script>
 
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('asset/auth/img/apple-icon.png') }}">
   <link rel="icon" type="image/png" href="{{ asset('asset/auth/img/favicon.png')}}">
   <title>
-    Elders_
+    dash
   </title>
  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -33,7 +39,7 @@
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+      <a class="navbar-brand m-0" href="/home" target="_blank">
         <img src="{{asset('images/wa.png')}}" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold text-white">IWALK</span>
       </a>
@@ -50,59 +56,50 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="{{url('ubudehe')}}">
+          <a class="nav-link text-white " href="{{url('event')}}">
       
-            <span class="nav-link-text ms-1">ubudehe</span>
+            <span class="nav-link-text ms-1">Add-Event</span>
           </a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link text-white " href="{{url('education')}}">
-      
-            <span class="nav-link-text ms-1">Education-Level</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link text-white " href="{{url('assety')}}">
-      
-            <span class="nav-link-text ms-1">Add-Asset</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="{{url('disability')}}">
-            
-            <span class="nav-link-text ms-1">Disability</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link text-white " href="{{url('desease')}}">
-           
-            <span class="nav-link-text ms-1">Desease</span>
-          </a>
-        </li>
         <li class="nav-item">
           <a class="nav-link text-white " href="{{url('roles')}}">
-            
-            <span class="nav-link-text ms-1">Set-roles</span>
+      
+            <span class="nav-link-text ms-1">AdminTask1</span>
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link text-white " href="{{url('permissions')}}">
+      
+            <span class="nav-link-text ms-1">AdminTask2</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{{url('requirements')}}">
             
-            <span class="nav-link-text ms-1">Set-Permission</span>
+            <span class="nav-link-text ms-1">Event-Requirements</span>
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white " href="{{url('application')}}">
-            
-            <span class="nav-link-text ms-1">Apply-For-Elder</span>
+          <a class="nav-link text-white " href="{{url('skedules')}}">
+           
+            <span class="nav-link-text ms-1">Skedules</span>
           </a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link text-white " href="#">
+            
+            <span class="nav-link-text ms-1">Reports</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{{url('apply')}}">
+            
+            <span class="nav-link-text ms-1">Apply-Here</span>
+          </a>
+        </li>
       </ul>
     </div>
   </aside>

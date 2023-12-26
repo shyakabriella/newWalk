@@ -1,62 +1,56 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Application;
+use App\Models\Requirement;
 
 use Illuminate\Http\Request;
-use App\Models\Ubudehe;
-use App\Models\Education;
-use App\Models\Asset;
-use App\Models\Desease;
-use App\Models\Disability;
+
 class PageController extends Controller
 {
-    public function index()
-    {   
-        $ubudehe = Ubudehe::get();  
-        $education = Education::get(); 
-        $asset = Asset::get(); 
-        $desease = Desease::get(); 
-        $disability = Disability::get(); 
-       //dd($ubudehe);
-        return view('pages.index', [                
-        ])
-        ->with("ubudehe",$ubudehe)  
-        ->with("education",$education) 
-        ->with("desease",$desease) 
-        ->with("disability",$disability) 
-        ->with("asset",$asset);  
-    }
-
-    public function how()
-    {      
-        return view('pages.how', [                
+    public function homepage()
+    {
+       
+        return view('pages.index', [
+       
         ]);    
     }
 
-    public function faq()
-    {      
-        return view('pages.faq', [                
+    public function about()
+    {
+        return view('pages.about', [
+        
         ]);    
     }
 
+    public function service()
+    {
+        return view('pages.service', [
+        
+        ]);    
+    }
     public function contact()
-    {      
-        return view('pages.contact', [                
+    {
+        return view('pages.contact', [
+        
         ]);    
     }
 
-    public function req()
-    {      
-        $ubudehe = Ubudehe::all();
-        return view('pages.req', [  
-            'ubudehe'=>$ubudehe
-                          
+    public function event()
+    {
+        return view('pages.event', [
+        
         ]);    
     }
 
-    public function welcome()
-    {      
-        return view('pages.welcome', [                
-        ]);    
+
+    public function app()
+    {
+        $requirements = Requirement::get();
+        return view('pages.app', [
+        
+        ])
+        ->with("requirements",$requirements);  
     }
+
 }

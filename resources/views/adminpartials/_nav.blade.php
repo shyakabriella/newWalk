@@ -22,14 +22,8 @@
                           
                         </div>
                     </div>
-
-
-
-                    <div class="nav-item dropdown">
-                        
+                    <div class="nav-item dropdown"> 
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                           
-                         
                         </div>
                     </div>
                     <div class="nav-item dropdown">

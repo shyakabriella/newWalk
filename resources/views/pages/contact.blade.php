@@ -1,90 +1,45 @@
 @extends('layouts.main')
 
 @section('content')
-<main>
-
-
-
-<header class="site-header d-flex flex-column justify-content-center align-items-center">
-    <div class="container">
-        <div class="row align-items-center">
-
-            <div class="col-lg-5 col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
-
-                        <li class="breadcrumb-item active" aria-current="page">Contact Form</li>
-                    </ol>
-                </nav>
-
-                <h2 class="text-white">Contact Form</h2>
-            </div>
-
-        </div>
-    </div>
-</header>
-
-
-<section class="section-padding section-bg">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-12 col-12">
-                <h3 class="mb-4 pb-2">We'd love to hear from you</h3>
-            </div>
-
-            <div class="col-lg-6 col-12">
-                <form action="#" method="#" class="custom-form contact-form" role="form">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-floating">
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="">
-                                
-                                <label for="floatingInput">Name</label>
-                            </div>
+ <!-- Contact -->
+ <section class="contact d-flex align-items-center py-5" id="contact">
+        <div class="container-fluid text-light">
+            <div class="row">
+                <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end align-items-center px-lg-5" data-aos="fade-right">
+                    <div style="width:90%">
+                        <div class="text-center text-lg-start py-4 pt-lg-0">
+                       
+                            <p class="para-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos dicta mollitia totam explicabo obcaecati quia laudantium repudiandae.</p>
                         </div>
-
-                        <div class="col-lg-6 col-md-6 col-12"> 
-                            <div class="form-floating">
-                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
-                                
-                                <label for="floatingInput">Email address</label>
+                        <div>
+                            <div class="row" >
+                                <div class="col-lg-6">
+                                    <div class="form-group py-2">
+                                        <input type="text" class="form-control form-control-input" id="exampleFormControlInput1" placeholder="Enter name">
+                                    </div>                                
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group py-2">
+                                        <input type="email" class="form-control form-control-input" id="exampleFormControlInput2" placeholder="Enter phone number">
+                                    </div>                                 
+                                </div>
                             </div>
+                            <div class="form-group py-1">
+                                <input type="email" class="form-control form-control-input" id="exampleFormControlInput3" placeholder="Enter email">
+                            </div>  
+                            <div class="form-group py-2">
+                                <textarea class="form-control form-control-input" id="exampleFormControlTextarea1" rows="6" placeholder="Message"></textarea>
+                            </div>                            
                         </div>
-
-                        <div class="col-lg-12 col-12">
-                            <div class="form-floating">
-                                <input type="text" name="subject" id="name" class="form-control" placeholder="Name" required="">
-                                
-                                <label for="floatingInput">Subject</label>
-                            </div>
-
-                            <div class="form-floating">
-                                <textarea class="form-control" id="message" name="message" placeholder="Tell me about the project"></textarea>
-                                
-                                <label for="floatingTextarea">Tell me about the project</label>
-                            </div>
+                        <div class="my-3">
+                            <a class="btn form-control-submit-button" href="#your-link">Submit</a>
                         </div>
-
-                        <div class="col-lg-4 col-12 ms-auto">
-                            <button type="submit" class="form-control">Submit</button>
-                        </div>
-
-                    </div>
-                </form>
-            </div>
-
-            <div class="col-lg-5 col-12 mx-auto mt-5 mt-lg-0">
-                <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.065641062665!2d-122.4230416990949!3d37.80335401520422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858127459fabad%3A0x808ba520e5e9edb7!2sFrancisco%20Park!5e1!3m2!1sen!2sth!4v1684340239744!5m2!1sen!2sth" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                <h5 class="mt-4 mb-2">Topic Listing Center</h5>
-
-                <p>Bay St &amp;, Larkin St, San Francisco, CA 94109, United States</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-</main>            
+                    </div> <!-- end of div -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
+                    <img class="img-fluid d-none d-lg-block" src="images/wa6.jpg" alt="contact">        
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </section> <!-- end of contact -->
 @endsection

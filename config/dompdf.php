@@ -162,6 +162,9 @@ return array(
          */
         "default_media_type" => "screen",
 
+        'font_path' => storage_path('fonts/'),
+
+
         /**
          * The default paper size.
          *
